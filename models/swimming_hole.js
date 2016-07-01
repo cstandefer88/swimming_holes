@@ -6,7 +6,7 @@ var swimmingHoleSchema = new mongoose.Schema({
   hours: { type: String, required: true },
   petFriendly: { type: Boolean, required: true },
   foodBeverage: { type: Boolean, required: true },
-  Price: { type: String, required: true },
+  price: { type: String, required: true },
   summary: { type: String, required: true }
 })
 
