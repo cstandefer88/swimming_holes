@@ -29,12 +29,6 @@ router.get('/:id', function(req, res, next) {
 });
 
 
-// // PULL UP PAGE FOR EDITING A REVIEW OF SPECIFIC SWIMMING HOLE
-// router.get('/:id/edit', function(req, res, next) {
-
-// });
-
-
 // // CREATE A NEW REVIEW AND SAVE TO DATABASE
 // router.post('/:id/new', function(req, res, next) {
 
