@@ -1,7 +1,7 @@
 <% if (message) { %>
   <p><%= message %></p>
 <% } %>
-
+<% include partials/header %>
 <form action="/sessions/" method="post">
   <div>
     <label>Username:</label>
@@ -19,3 +19,4 @@
     <input type="submit" value="Sign Up"/>
   </div>
 </form>
+<% include partials/footer %>

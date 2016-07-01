@@ -1,8 +1,8 @@
 <% if (message) { %>
   <p><%= message %></p>
 <% } %>
-
-<form action="/sessions/" method="post">
+<% include partials/header %>
+<form action="/" method="post">
   <div>
     <h1>
     <label>Create a new review:</label>
@@ -12,3 +12,4 @@
     <input type="submit" value="Add Review!"/>
   </div>
 </form>
+<% include partials/footer %>
