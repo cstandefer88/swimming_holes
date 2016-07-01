@@ -7,7 +7,8 @@ var swimmingHoleSchema = new mongoose.Schema({
   petFriendly: { type: Boolean, required: true },
   foodBeverage: { type: Boolean, required: true },
   price: { type: String, required: true },
-  summary: { type: String, required: true }
+  summary: { type: String, required: true },
+  image_url: { type: String, required: true }
 })
 
 var SwimmingHole = mongoose.model('SwimmingHole', swimmingHoleSchema);
