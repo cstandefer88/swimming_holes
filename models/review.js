@@ -5,4 +5,6 @@ var reviewSchema = new mongoose.Schema({
   review: { type: String, required: true }
 });
 
+var Review = mongoose.model('Review', reviewSchema);
+
 module.exports = mongoose.model();
