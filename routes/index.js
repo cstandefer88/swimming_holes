@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 
 // PULL UP PAGE FOR CREATING A NEW REVIEW ON A SPECIFIC SWIMMING HOLE
 router.get('/:id/new', function(req, res, next) {
-  res.render('/sessions/review');
+  res.render('/review');
 });
 
 
@@ -24,7 +24,7 @@ router.get('/:id', function(req, res, next) {
   var swimmingHoleId = req.params.id;
   SwimmingHole.findOne( {_id: swimmingHoleId }, function(err, swimming_hole) {
     if (err) console.log(err);
-    res.render('/sessions/swimming_hole/' + req.params.id, { swimming_hole: swimming_hole });
+    res.render('/swimming_hole' + req.params.id, { swimming_hole: swimming_hole });
   });
 });
 
