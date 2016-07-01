@@ -8,7 +8,7 @@ var Review = require('../models/review');
 router.get('/', function(req, res, next) {
   SwimmingHole.find({}, function(err, swimming_holes) {
     if (err) console.log(err);
-    res.render('index', { title: 'SwimHole Austin', swimming_holes: swimming_holes });
+    res.render('index', { title: 'SwimSpot Austin', swimming_holes: swimming_holes });
   });
 });
 
@@ -24,7 +24,7 @@ router.get('/:id', function(req, res, next) {
   var swimmingHoleId = req.params.id;
   SwimmingHole.findOne( {_id: swimmingHoleId }, function(err, swimming_hole) {
     if (err) console.log(err);
-    res.render('/swimming_hole' + req.params.id, { swimming_hole: swimming_hole });
+    res.render('/swimming_hole', { swimming_hole: swimming_hole });
   });
 });
 
