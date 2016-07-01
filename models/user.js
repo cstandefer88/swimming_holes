@@ -4,6 +4,7 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 var userSchema = new mongoose.Schema({
+  username: { type: String, required: true },
   email: { type: String, required: true, index: { unique: true }},
   password: { type: String, required: true }
 });
@@ -32,5 +33,7 @@ userSchema.pre('save', function(next) {
 userSchema.methods.validPassword = function(candidatePassword, cb) {
   return bcrypt.compareSync(candidatePassword, this.password);
 };
+
+var User = mongoose.model('User', userSchema);
 
 module.exports = mongoose.model('users', userSchema);
