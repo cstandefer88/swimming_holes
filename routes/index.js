@@ -13,10 +13,10 @@ router.get('/', function(req, res, next) {
 });
 
 
-// // PULL UP PAGE FOR CREATING A NEW REVIEW ON A SPECIFIC SWIMMING HOLE
-// router.get('/:id/new', function(req, res, next) {
-
-// });
+// PULL UP PAGE FOR CREATING A NEW REVIEW ON A SPECIFIC SWIMMING HOLE
+router.get('/:id/new', function(req, res, next) {
+  res.render('/sessions/review');
+});
 
 
 // PULL UP PAGE OF SPECIFIC SWIMMING HOLE
@@ -24,15 +24,25 @@ router.get('/:id', function(req, res, next) {
   var swimmingHoleId = req.params.id;
   SwimmingHole.findOne( {_id: swimmingHoleId }, function(err, swimming_hole) {
     if (err) console.log(err);
-    res.render('/sessions/swimming_hole', { swimming_hole: swimming_hole });
+    res.render('/sessions/swimming_hole/' + req.params.id, { swimming_hole: swimming_hole });
   });
 });
 
 
-// // CREATE A NEW REVIEW AND SAVE TO DATABASE
-// router.post('/:id/new', function(req, res, next) {
+// CREATE A NEW REVIEW AND SAVE TO DATABASE
+router.post('/:id/new', function(req, res, next) {
+// create review
+  var review = new Review({
+    username: req.body.username,
+    review: req.body.review
+  });
 
-// });
+// save review to database and redirect
+  Review.save(function(err, review) {
+    if (err) console.log(err);
+    res.redirect('/:id');
+  });
+});
 
 
 // // UPDATE A REVIEW AND SAVE TO DATABASE
