@@ -1,10 +1,8 @@
   <% include partials/header %>
-  <body>
     <h1><%= title %></h1>
     <% if (user) { %>
       Welcome back, <%= user.email %>
     <% } else { %>
       <p>Welcome to <%= title %></p>
     <% } %>
-  </body>
   <% include partials/footer %>
