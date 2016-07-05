@@ -5,6 +5,10 @@
     <% } else { %>
       <p>Welcome to <%= title %></p>
     <% } %>
-    
-
+    <% swimming_holes.forEach(function(swimming_hole){ %>
+      <h2><%= swimming_hole.name %></h2>
+      <a><img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>"></a>
+    <% }) %>
   <% include partials/footer %>
+
+
