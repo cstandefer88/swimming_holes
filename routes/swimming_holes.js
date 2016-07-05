@@ -16,7 +16,7 @@ router.get('/:id', function(req, res, next) {
 
 
 // CREATE A NEW REVIEW AND SAVE TO DATABASE
-router.post('/:id/reviews', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
 // create review
   var review = new Review({
     username: req.body.username,
