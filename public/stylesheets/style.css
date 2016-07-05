@@ -20,26 +20,6 @@ h1 {
 
 }
 
-.cursive {
-  font-family: 'Lobster', cursive;
-  /*font-size: 60px;*/
-}
-
-.notcursive{
-  font-family: 'Poiret One', cursive;
-}
-
-.title {
-  display: inline-flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 h2 {
   font-family: 'Arimo', sans-serif;
   font-weight: bold;
@@ -83,6 +63,26 @@ img {
   width: 100%;
   max-width: 500px;
   border: 1px solid black;
+}
+
+.cursive {
+  font-family: 'Lobster', cursive;
+  /*font-size: 60px;*/
+}
+
+.notcursive{
+  font-family: 'Poiret One', cursive;
+}
+
+.title {
+  display: inline-flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .left {
