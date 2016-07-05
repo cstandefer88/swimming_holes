@@ -1,34 +1,40 @@
 <% include partials/header %>
 
 <h1><%= swimming_hole.name %></h1>
+<div>
+  <ul>
+    <li><%= swimming_hole.location %></li>
+    <li><%= swimming_hole.hours %></li>
+    <li><%= swimming_hole.petFriendly %></li>
+    <li><%= swimming_hole.foodBeverage %></li>
+    <li><%= swimming_hole.price %></li>
+  </ul>
+</div>
+<div>
+  <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
+</div>
+<div>
+  <p><%= swimming_hole.summary %></p>
+</div>
+
+
+<form action="/" method="post">
   <div>
-    <ul>
-      <li><%= swimming_hole.location %></li>
-      <li><%= swimming_hole.hours %></li>
-      <li><%= swimming_hole.petFriendly %></li>
-      <li><%= swimming_hole.foodBeverage %></li>
-      <li><%= swimming_hole.price %></li>
-    </ul>
+    <label>Create a new review:</label>
+    <!-- <input type="text" name="review"/> -->
   </div>
   <div>
-    <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
+    <textarea name="review" placeholder="Write a review"></textarea>
   </div>
   <div>
-    <p><%= swimming_hole.summary %></p>
-
-  <div>
-
+    <input type="submit" value="Add Review!"/>
   </div>
+</form>
 
-    <form action="/" method="post">
-      <div>
-        <h1>
-        <label>Create a new review:</label>
-        <input type="text" name="review"/>
-      </div>
-      <div>
-        <input type="submit" value="Add Review!"/>
-      </div>
-    </form>
+<div>
+  <% reviews.forEach(function(review) { %>
+    <p><%= review.username %></p>
+  <% }) %>
+</div>
 
 <% include partials/footer %>

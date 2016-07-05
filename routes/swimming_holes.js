@@ -11,7 +11,7 @@ router.get('/:id', function(req, res, next) {
   SwimmingHole.findById(swimmingHoleId, function(err, swimming_hole) {
     if (err) console.log(err);
     console.log(swimmingHoleId);
-    res.render('swimming_hole', { swimming_hole: swimming_hole });
+    res.render('swimming_hole', { swimming_hole: swimming_hole, reviews: reviews });
   });
 });
 
@@ -23,7 +23,6 @@ router.post('/:id/reviews', function(req, res, next) {
     username: req.body.username,
     review: req.body.review
   });
-
   Review.save(function(err, review) {
     if (err) console.log(err);
     res.redirect('/');
