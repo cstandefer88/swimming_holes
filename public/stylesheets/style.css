@@ -48,10 +48,26 @@ p {
 }
 
 img {
-  height: 20%;
-  width: 20%;
+  /*height: 20%;*/
+  width: 100%;
+  max-width: 400px;
+
 }
 
 .left {
   float: left;
+}
+
+.swimmingHole{
+  text-align: center;
+  margin: 20px 0;
+  width: 49%;
+  display: inline-block;
+  padding: 15px;
+}
+
+@media (max-width: 760px){
+  .swimmingHole{
+    width: 100%;
+  }
 }
