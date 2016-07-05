@@ -11,7 +11,7 @@ router.get('/', authWall, function(req, res, next) {
 
 /* GET home page. */
 router.get('/new', function(req, res, next) {
-  res.render('users/new', { title: 'Express' });
+  res.render('users/user', { title: 'Express' });
 });
 
 /* GET home page. */
@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
   user.save(function(err, user) {
     // Handle save error
     if (err) return next(err);
-    res.redirect('/users/new');
+    res.redirect('/users/user');
   });
 });
 
