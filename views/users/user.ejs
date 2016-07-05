@@ -1,5 +1,13 @@
+<% if (message) { %>
+  <p><%= message %></p>
+<% } %>
 <% include partials/header %>
-<form action="/users/" method="post">
+<h2>Sign Up</h2>
+<form action="/sessions/" method="post">
+  <div>
+    <label>Username:</label>
+    <input type="text" name="username"/>
+  </div>
   <div>
     <label>Email:</label>
     <input type="text" name="email"/>
@@ -12,4 +20,23 @@
     <input type="submit" value="Sign Up"/>
   </div>
 </form>
+
+<h2>Log In</h2>
+<% if (message) { %>
+  <p><%= message %></p>
+<% } %>
+<form action="/sessions/" method="post">
+  <div>
+    <label>Username:</label>
+    <input type="text" name="username"/>
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" name="password"/>
+  </div>
+  <div>
+    <input type="submit" value="Log In"/>
+  </div>
+</form>
+
 <% include partials/footer %>
