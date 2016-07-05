@@ -7,7 +7,7 @@
     <% } %>
     <% swimming_holes.forEach(function(swimming_hole){ %>
       <h2><%= swimming_hole.name %></h2>
-      <a><img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>"></a>
+      <a href="/swimming_holes/<%= swimming_hole._id %>"><img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>"></a>
     <% }) %>
   <% include partials/footer %>
 
