@@ -1,7 +1,5 @@
 <% include partials/header %>
-<% if (message) { %>
-  <p><%= message %></p>
-<% } %>
+
 <h1><%= swimming_hole.name %></h1>
   <div>
     <ul>
@@ -11,7 +9,7 @@
       <li><%= swimming_hole.foodBeverage %></li>
       <li><%= swimming_hole.price %></li>
     </ul>
-  <div>
+  </div>
   <div>
     <%= swimming_hole.image_url %>
   </div>
@@ -21,7 +19,6 @@
   <div>
 
   </div>
-    // forEach() review blah blah....
 
     <form action="/" method="post">
       <div>

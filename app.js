@@ -9,12 +9,15 @@ var flash = require('connect-flash');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var connect = require('connect')
+
 
 mongoose.connect(process.env.DB_SWIMMING_HOLES);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var sessions = require('./routes/sessions');
+var swimming_holes = require('./routes/swimming_holes')
 
 var app = express();
 
@@ -32,7 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
 
 // Method override – NEW CODE
-var connect        = require('connect')
 var methodOverride = require('method-override')
 app.use(methodOverride(function(req, res){
  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -90,6 +92,7 @@ app.use(function(req, res, next) {
 app.use('/', routes);
 app.use('/users', users);
 app.use('/sessions', sessions);
+app.use('/swimming_holes', swimming_holes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

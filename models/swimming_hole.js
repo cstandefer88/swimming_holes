@@ -11,6 +11,6 @@ var swimmingHoleSchema = new mongoose.Schema({
   imageUrl: { type: String, required: true }
 })
 
-var SwimmingHole = mongoose.model('SwimmingHole', swimmingHoleSchema);
+var SwimmingHole = mongoose.model('swimming_holes', swimmingHoleSchema);
 
 module.exports = SwimmingHole;
