@@ -1,10 +1,13 @@
   <% include partials/header %>
-    <h1><%= title %></h1>
-    <% if (user) { %>
+    <div class="title">
+      <h1 class="cursive"> SwimSpot </h1>
+      <h1 class="notcursive"> Austin </h1>
+    </div>
+    <!-- <% if (user) { %>
       <p>Welcome back, <%= user.email %></p>
     <% } else { %>
       <p>Welcome to <%= title %></p>
-    <% } %>
+    <% } %> -->
     <div class="">
       <% swimming_holes.forEach(function(swimming_hole){ %>
         <div class="swimmingHole ">
