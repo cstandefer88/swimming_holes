@@ -6,6 +6,6 @@ var reviewSchema = new mongoose.Schema({
   image: { type: String}
 });
 
-var Review = mongoose.model('Review', reviewSchema);
+var Review = mongoose.model('reviews', reviewSchema);
 
 module.exports = Review;

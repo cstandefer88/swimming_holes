@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user');
 var SwimmingHole = require('../models/swimming_hole');
 var Review = require('../models/review');
 
@@ -26,7 +25,7 @@ router.post('/:id/reviews', function(req, res, next) {
 
   Review.save(function(err, review) {
     if (err) console.log(err);
-    res.redirect('/');
+    res.redirect('/:id');
   });
 });
 
@@ -35,7 +34,7 @@ router.post('/:id/reviews', function(req, res, next) {
 router.patch('/reviews/:id', function(req, res, next) {
   Review.findByIdAndUpdate(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
-    res.redirect('/');
+    res.redirect('/:id');
   })
 });
 
@@ -44,7 +43,7 @@ router.patch('/reviews/:id', function(req, res, next) {
 router.delete('/reviews/:id', function(req, res, next) {
   Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
-    res.redirect('/');
+    res.redirect('/:id');
   })
 });
 
