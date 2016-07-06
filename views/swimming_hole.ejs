@@ -1,24 +1,25 @@
 <% include partials/header %>
 
-<h1><%= swimming_hole.name %></h1>
-  <div>
-    <ul>
-      <li>Location: <%= swimming_hole.location %></li>
-      <li>Hours: <%= swimming_hole.hours %></li>
-      <li>Pet Friendly: <%= swimming_hole.petFriendly %></li>
-      <li>Food and Beverage Allowed: <%= swimming_hole.foodBeverage %></li>
-      <li>Price: <%= swimming_hole.price %></li>
-    </ul>
-  </div>
-  <div>
-    <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
-  </div>
-  <div>
-    <p><%= swimming_hole.summary %></p>
-
-  <div>
-
-  </div>
+<h1 class="holeName"><%= swimming_hole.name %></h1>
+  <section>
+    <div class="specificInformation">
+      <ul>
+        <li>Location: <%= swimming_hole.location %></li>
+        <li>Hours: <%= swimming_hole.hours %></li>
+        <li>Pet Friendly: <%= swimming_hole.petFriendly %></li>
+        <li>Food and Beverage Allowed: <%= swimming_hole.foodBeverage %></li>
+        <li>Price: <%= swimming_hole.price %></li>
+      </ul>
+    </div>
+    <div class= "specificImage">
+      <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
+    </div>
+  </section>
+  <section>
+    <div class="summary">
+      <p><%= swimming_hole.summary %></p>
+    </div>
+  </section>
 
     <form action="/swimming_holes/<%= swimming_hole._id %>/reviews" method="post">
       <div>
