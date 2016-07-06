@@ -21,15 +21,6 @@ h1 {
   line-height: 450px;
 }
 
-ul {
-  list-style-type: none;
-}
-
-li {
-  float:right;
-  font-weight: bold;
-}
-
 li a:hover {
   color: #a2c7c8;
 }
@@ -49,7 +40,6 @@ p {
 }
 
 img {
-  /*height: 20%;*/
   width: 70%;
   max-width: 500px;
   border: 1px solid black;
@@ -95,12 +85,22 @@ footer {
   color: #121422;
 }
 
+.right {
+  float: right;
+  font-weight: bold;
+}
+
 .arrow {
   text-align: center;
 }
 
 .arrow:hover {
   cursor: pointer;
+}
+
+.holeName {
+  font-size: 40px;
+  line-height: normal;
 }
 
 .locations {
@@ -125,6 +125,18 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.specificInformation {
+  float: left;
+}
+
+.specificImage {
+  float: right;
+}
+
+.summary {
+  display: inline-block;
 }
 
 .left {
@@ -152,6 +164,18 @@ footer {
 
 .email {
   margin-left: 2.8%;
+}
+
+.verticalList {
+  display: block;
+}
+
+.specificImage {
+  display: block;
+}
+
+.navBar {
+  list-style-type: none;
 }
 
 .password {
