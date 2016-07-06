@@ -79,6 +79,14 @@ footer {
   font-family: 'Poiret One', cursive;
 }
 
+.hero {
+  background-image: url('../images/austinBackground.jpg');
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
 .title {
   display: inline-flex;
   display: -webkit-box;
@@ -86,8 +94,8 @@ footer {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .left {
