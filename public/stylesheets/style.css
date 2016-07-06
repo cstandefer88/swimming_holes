@@ -91,6 +91,18 @@ footer {
   padding-top: 20px;
 }
 
+.fa-chevron-down {
+  color: #121422;
+}
+
+.arrow {
+  text-align: center;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
 .locations {
   font-family: 'Poiret One', cursive;
   font-size: 40px;
@@ -149,7 +161,7 @@ footer {
 
 #logo img{
   float: left;
-  width: 4%;
+  width: 3%;
   margin: 6px 6px;
   border: none;
 }
