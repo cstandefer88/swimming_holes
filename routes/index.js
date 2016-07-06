@@ -1,8 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user');
 var SwimmingHole = require('../models/swimming_hole');
-var Review = require('../models/review');
 
 // PULL UP INDEX
 router.get('/', function(req, res, next) {
