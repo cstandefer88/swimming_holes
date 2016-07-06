@@ -21,7 +21,7 @@
     </div>
   </section>
 
-    <form action="/swimming_holes/<%= swimming_hole._id %>/reviews" method="post">
+    <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
       <div>
         <h1>
         <label>Create a new review:</label>
@@ -32,4 +32,9 @@
       </div>
     </form>
 
+    <div>
+    <% reviews.forEach(function(review) { %>
+      <p><%= review.review %></p>
+     <% }) %>
+    </div>
 <% include partials/footer %>
