@@ -1,39 +1,37 @@
 <% include partials/header %>
 
 
-<h1><%= swimmingHole.name %></h1>
-  <div>
-    <ul>
-      <li>Location: <%= swimmingHole.location %></li>
-      <li>Hours: <%= swimmingHole.hours %></li>
-      <li>Pet Friendly: <%= swimmingHole.petFriendly %></li>
-      <li>Food and Beverage Allowed: <%= swimmingHole.foodBeverage %></li>
-      <li>Price: <%= swimmingHole.price %></li>
-    </ul>
-  </div>
-  <div>
-    <img src="<%= swimmingHole.imageUrl %>" alt="Picture of <%= swimmingHole.name %>">
-  </div>
-  <div>
-    <p><%= swimmingHole.summary %></p>
-  </div>
+<h1 class="holeName"><%= swimmingHole.name %></h1>
+  <section>
+    <div class="specificInformation">
+      <ul>
+        <li>Location: <%= swimmingHole.location %></li>
+        <li>Hours: <%= swimmingHole.hours %></li>
+        <li>Pet Friendly: <%= swimmingHole.petFriendly %></li>
+        <li>Food and Beverage Allowed: <%= swimmingHole.foodBeverage %></li>
+        <li>Price: <%= swimmingHole.price %></li>
+      </ul>
+    </div>
+    <div class= "specificImage">
+      <img src="<%= swimmingHole.imageUrl %>" alt="Picture of <%= swimmingHole.name %>">
+    </div>
+  </section>
+  <section>
+    <div class="summary">
+      <p><%= swimmingHole.summary %></p>
+    </div>
+  </section>
 
-<form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
-  <div>
-    <h1>
-    <label>Create a new review:</label>
-    <input type="text" name="review"/>
-  </div>
-    <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
-      <div>
-        <h1>
-        <label>Create a new review:</label>
-        <input type="text" name="review"/>
-      </div>
-      <div>
-        <input type="submit" value="Add Review!"/>
-      </div>
-    </form>
+  <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
+    <div>
+      <h1>
+      <label>Create a new review:</label>
+      <input type="text" name="review"/>
+    </div>
+    <div>
+      <input type="submit" value="Add Review!"/>
+    </div>
+  </form>
   <div>
   <% reviews.forEach(function(review) { %>
     <p><%= review.review %></p>
