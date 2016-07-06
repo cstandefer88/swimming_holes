@@ -1,23 +1,23 @@
 <% include partials/header %>
 
-<h1 class="holeName"><%= swimming_hole.name %></h1>
+<h1 class="holeName"><%= swimmingHole.name %></h1>
   <section>
     <div class="specificInformation">
       <ul>
-        <li>Location: <%= swimming_hole.location %></li>
-        <li>Hours: <%= swimming_hole.hours %></li>
-        <li>Pet Friendly: <%= swimming_hole.petFriendly %></li>
-        <li>Food and Beverage Allowed: <%= swimming_hole.foodBeverage %></li>
-        <li>Price: <%= swimming_hole.price %></li>
+        <li>Location: <%= swimmingHole.location %></li>
+        <li>Hours: <%= swimmingHole.hours %></li>
+        <li>Pet Friendly: <%= swimmingHole.petFriendly %></li>
+        <li>Food and Beverage Allowed: <%= swimmingHole.foodBeverage %></li>
+        <li>Price: <%= swimmingHole.price %></li>
       </ul>
     </div>
     <div class= "specificImage">
-      <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
+      <img src="<%= swimmingHole.imageUrl %>" alt="Picture of <%= swimmingHole.name %>">
     </div>
   </section>
   <section>
     <div class="summary">
-      <p><%= swimming_hole.summary %></p>
+      <p><%= swimmingHole.summary %></p>
     </div>
   </section>
 
