@@ -10,9 +10,9 @@
     <% } else { %>
       <p>Welcome to <%= title %></p>
     <% } %> -->
-    <div class="">
+    <div>
       <% swimming_holes.forEach(function(swimming_hole){ %>
-        <div class="swimmingHole ">
+        <div class="swimmingHole">
           <h2><%= swimming_hole.name %></h2>
           <a href="/swimming_holes/<%= swimming_hole._id %>"><img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>"></a>
         </div>
