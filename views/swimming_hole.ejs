@@ -1,26 +1,26 @@
 <% include partials/header %>
 
-<h1><%= swimming_hole.name %></h1>
+<h1><%= swimmingHole.name %></h1>
   <div>
     <ul>
-      <li>Location: <%= swimming_hole.location %></li>
-      <li>Hours: <%= swimming_hole.hours %></li>
-      <li>Pet Friendly: <%= swimming_hole.petFriendly %></li>
-      <li>Food and Beverage Allowed: <%= swimming_hole.foodBeverage %></li>
-      <li>Price: <%= swimming_hole.price %></li>
+      <li>Location: <%= swimmingHole.location %></li>
+      <li>Hours: <%= swimmingHole.hours %></li>
+      <li>Pet Friendly: <%= swimmingHole.petFriendly %></li>
+      <li>Food and Beverage Allowed: <%= swimmingHole.foodBeverage %></li>
+      <li>Price: <%= swimmingHole.price %></li>
     </ul>
   </div>
   <div>
-    <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
+    <img src="<%= swimmingHole.imageUrl %>" alt="Picture of <%= swimmingHole.name %>">
   </div>
   <div>
-    <p><%= swimming_hole.summary %></p>
+    <p><%= swimmingHole.summary %></p>
 
   <div>
 
   </div>
 
-    <form action="/swimming_holes/<%= swimming_hole._id %>/reviews" method="post">
+    <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
       <div>
         <h1>
         <label>Create a new review:</label>
@@ -31,4 +31,9 @@
       </div>
     </form>
 
+    <div>
+    <% reviews.forEach(function(review) { %>
+      <p><%= review.review %></p>
+     <% }) %>
+    </div>
 <% include partials/footer %>
