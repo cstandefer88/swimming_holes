@@ -1,16 +1,16 @@
 <% include ../partials/header %>
-<h2>Sign Up</h2>
-<form action="/users/" method="post">
+<h2 class="formTitle">Sign Up</h2>
+<form class="accessAccount" action="/users/" method="post">
   <div>
     <label>Username:</label>
     <input type="text" name="username"/>
   </div>
   <div>
-    <label>Email:</label>
+    <label class="email">Email:</label>
     <input type="text" name="email"/>
   </div>
   <div>
-    <label>Password:</label>
+    <label class="password">Password:</label>
     <input type="password" name="password"/>
   </div>
   <div>
@@ -18,14 +18,14 @@
   </div>
 </form>
 
-<h2>Log In</h2>
-<form action="/users/" method="post">
+<h2 class="formTitle">Log In</h2>
+<form class="accessAccount" action="/users/" method="post">
   <div>
     <label>Username:</label>
     <input type="text" name="username"/>
   </div>
   <div>
-    <label>Password:</label>
+    <label class="password">Password:</label>
     <input type="password" name="password"/>
   </div>
   <div>
@@ -34,4 +34,3 @@
 </form>
 
 <% include ../partials/footer %>
-
