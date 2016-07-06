@@ -3,6 +3,7 @@ var router = express.Router();
 var SwimmingHole = require('../models/swimming_hole');
 var Review = require('../models/review');
 var mongoose = require('mongoose');
+var methodOverride = require('method-override');
 
 
 // PULL UP PAGE OF SPECIFIC SWIMMING HOLE
@@ -26,32 +27,27 @@ router.get('/:id', function(req, res, next) {
 
 // CREATE A NEW REVIEW AND SAVE TO DATABASES
 router.post('/:id/reviews', function(req, res, next) {
-// create review
   var review = new Review({
     review: req.body.review
   });
 
   review.save(function(err, review) {
     if (err) console.log(err);
-    // get swimming hole out of database
     var id = req.params.id
     SwimmingHole.findById( id, function(err, swimmingHole) {
       if (err) console.log(err);
       console.log(swimmingHole)
-    // insert review id into swimming hole reviews array
       swimmingHole.reviews.push(review);
       swimmingHole.save(function(err, swimmingHole) {
         res.redirect('/swimming_holes/' + req.params.id);
       });
     });
-    // save the swimming hole
-    // DONT KNOW YET
   });
 });
 
 
 // // UPDATE A REVIEW AND SAVE TO DATABASE
-router.patch('/reviews/:id', function(req, res, next) {
+router.patch('/:id', function(req, res, next) {
   Review.findByIdAndUpdate(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
     res.redirect('/swimming_holes/' + req.params.id);
@@ -60,7 +56,7 @@ router.patch('/reviews/:id', function(req, res, next) {
 
 
 // // DELETE A REVIEW AND SAVE TO DATABASE
-router.delete('/reviews/:id', function(req, res, next) {
+router.delete('/:id', function(req, res, next) {
   Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
     res.redirect('/swimming_holes/' + req.params.id);
