@@ -2,33 +2,50 @@ var express = require('express');
 var router = express.Router();
 var SwimmingHole = require('../models/swimming_hole');
 var Review = require('../models/review');
+var mongoose = require('mongoose');
 
 
 // PULL UP PAGE OF SPECIFIC SWIMMING HOLE
 router.get('/:id', function(req, res, next) {
   var swimmingHoleId = req.params.id;
-  SwimmingHole.findById(swimmingHoleId, function(err, swimming_hole) {
+  SwimmingHole.findById(swimmingHoleId, function(err, swimmingHole) {
     if (err) console.log(err);
-    // get review id
-    // get associated review
-    res.render('swimming_hole', { swimming_hole: swimming_hole });
+    var reviewIds = swimmingHole.reviews.map(function(reviewId) {
+      return mongoose.Types.ObjectId(reviewId);
+    });
+    Review.find({
+      '_id': { $in: reviewIds }
+    }, function(err, reviews) {
+      if (err) console.log(err);
+      console.log(reviews);
+    res.render('swimming_hole', { swimmingHole: swimmingHole, reviews: reviews });
   });
+});
 });
 
 
-// CREATE A NEW REVIEW AND SAVE TO DATABASE
-router.post('/:id', function(req, res, next) {
-  var id = req.params.id;
+
+// CREATE A NEW REVIEW AND SAVE TO DATABASES
+router.post('/:id/reviews', function(req, res, next) {
+// create review
   var review = new Review({
-    username: req.body.username,
     review: req.body.review
   });
   review.save(function(err, review) {
     if (err) console.log(err);
     // get swimming hole out of database
+    var id = req.params.id
+    SwimmingHole.findById( id, function(err, swimmingHole) {
+      if (err) console.log(err);
+      console.log(swimmingHole)
     // insert review id into swimming hole reviews array
+      swimmingHole.reviews.push(review);
+      swimmingHole.save(function(err, swimmingHole) {
+        res.redirect('/swimming_holes/' + req.params.id);
+      });
+    });
     // save the swimming hole
-    res.redirect('/swimming_holes/' + req.params.id);
+    // DONT KNOW YET
   });
 });
 
