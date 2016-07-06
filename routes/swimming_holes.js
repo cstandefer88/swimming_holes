@@ -9,23 +9,27 @@ router.get('/:id', function(req, res, next) {
   var swimmingHoleId = req.params.id;
   SwimmingHole.findById(swimmingHoleId, function(err, swimming_hole) {
     if (err) console.log(err);
-    console.log(swimmingHoleId);
+    // get review id
+    // get associated review
     res.render('swimming_hole', { swimming_hole: swimming_hole });
   });
 });
 
 
 // CREATE A NEW REVIEW AND SAVE TO DATABASE
-router.post('/:id', function(req, res, next) {
+router.post('/:id/reviews', function(req, res, next) {
 // create review
   var review = new Review({
     username: req.body.username,
     review: req.body.review
   });
 
-  Review.save(function(err, review) {
+  review.save(function(err, review) {
     if (err) console.log(err);
-    res.redirect('/:id');
+    // get swimming hole out of database
+    // insert review id into swimming hole reviews array
+    // save the swimming hole
+    res.redirect('/swimming_holes/' + req.params.id);
   });
 });
 
@@ -34,7 +38,7 @@ router.post('/:id', function(req, res, next) {
 router.patch('/reviews/:id', function(req, res, next) {
   Review.findByIdAndUpdate(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
-    res.redirect('/:id');
+    res.redirect('/swimming_holes/' + req.params.id);
   })
 });
 
@@ -43,7 +47,7 @@ router.patch('/reviews/:id', function(req, res, next) {
 router.delete('/reviews/:id', function(req, res, next) {
   Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
-    res.redirect('/:id');
+    res.redirect('/swimming_holes/' + req.params.id);
   })
 });
 
