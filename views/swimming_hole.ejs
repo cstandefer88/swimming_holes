@@ -21,7 +21,6 @@
 <form action="/swimming_holes/<%= swimming_holes._id %>" method="post">
   <div>
     <label>Create a new review:</label>
-    <!-- <input type="text" name="review"/> -->
   </div>
   <div>
     <textarea name="review" placeholder="Write a review"></textarea>
@@ -32,5 +31,15 @@
 </form>
 
 
+<form action="/swimming_holes/<%= swimming_hole._id %>/reviews" method="post">
+  <div>
+    <h1>
+    <label>Create a new review:</label>
+    <input type="text" name="review"/>
+  </div>
+  <div>
+    <input type="submit" value="Add Review!"/>
+  </div>
+</form>
 
 <% include partials/footer %>

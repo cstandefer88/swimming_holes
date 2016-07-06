@@ -14,25 +14,16 @@ a {
 
 h1 {
   text-align: center;
+  vertical-align: middle;
   /*font-weight: bolder;*/
-  font-size: 75px;
+  font-size: 105px;
   color: #171C3B;
-
+  line-height: 450px;
 }
 
 h2 {
   font-family: 'Arimo', sans-serif;
   font-weight: bold;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: linear-gradient(#2E4062, #121422);
-  border: 3px solid #000;
-  margin-bottom: 30px;
 }
 
 li {
@@ -70,21 +61,34 @@ footer {
   bottom: 0;
 }
 
-.cursive {
-  font-family: 'Lobster', cursive;
-  /*font-size: 60px;*/
-}
-
-.notcursive{
-  font-family: 'Poiret One', cursive;
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(#2E4062, #121422);
+  border: 3px solid #000;
+  white-space: nowrap;
 }
 
 .hero {
-  background-image: url('../images/austinBackground.jpg');
-  height: 500px;
+  background-image: url('../images/newBG.jpg');
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  height: 600px;
   background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.6;
+}
+
+.cursive {
+  font-family: 'Lobster', cursive;
+  padding-top: 20px;
+  /*font-size: 60px;*/
+}
+
+.notcursive {
+  font-family: 'Poiret One', cursive;
+  padding-top: 20px;
 }
 
 .title {
