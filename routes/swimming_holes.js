@@ -17,16 +17,17 @@ router.get('/:id', function(req, res, next) {
 
 
 // CREATE A NEW REVIEW AND SAVE TO DATABASE
-router.post('/review', function(req, res, next) {
+router.post('/:id', function(req, res, next) {
   var id = req.params.id;
   var review = new Review({
     username: req.body.username,
     review: req.body.review
   });
+  console.log("The id of this page is" + id);
   review.save(function(err, review) {
     if (err) console.log(err);
-    console.log("The id of this is" + id);
-    res.send('/:id');
+    console.log("The id of this page is" + id);
+    res.redirect('/' + id);
   });
 });
 
