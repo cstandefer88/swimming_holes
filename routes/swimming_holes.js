@@ -10,25 +10,25 @@ router.get('/:id', function(req, res, next) {
   var swimmingHoleId = req.params.id;
   SwimmingHole.findById(swimmingHoleId, function(err, swimming_hole) {
     if (err) console.log(err);
-    console.log(swimmingHoleId);
-    res.render('swimming_hole', { swimming_hole: swimming_hole, reviews: reviews });
+    //console.log(swimmingHoleId);
+    res.render('swimming_hole', { swimming_hole: swimming_hole});
   });
 });
 
 
 // CREATE A NEW REVIEW AND SAVE TO DATABASE
-router.post('/:id/reviews', function(req, res, next) {
-// create review
+router.post('/:id', function(req, res, next) {
+  var id = req.params.id;
   var review = new Review({
     username: req.body.username,
     review: req.body.review
   });
-  Review.save(function(err, review) {
+  review.save(function(err, review) {
     if (err) console.log(err);
-    res.redirect('/');
+    console.log("The id of this is" + id);
+    res.send('/:id');
   });
 });
-
 
 // // UPDATE A REVIEW AND SAVE TO DATABASE
 router.patch('/reviews/:id', function(req, res, next) {

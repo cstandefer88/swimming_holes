@@ -18,10 +18,17 @@
 </div>
 
 
-<form action="/" method="post">
+<form action="/:id" method="post">
   <div>
     <label>Create a new review:</label>
     <!-- <input type="text" name="review"/> -->
+    <ul>
+      <li>Location: <%= swimming_hole.location %></li>
+      <li>Hours: <%= swimming_hole.hours %></li>
+      <li>Pet Friendly: <%= swimming_hole.petFriendly %></li>
+      <li>Food and Beverage Allowed: <%= swimming_hole.foodBeverage %></li>
+      <li>Price: <%= swimming_hole.price %></li>
+    </ul>
   </div>
   <div>
     <textarea name="review" placeholder="Write a review"></textarea>
@@ -31,10 +38,6 @@
   </div>
 </form>
 
-<div>
-  <% reviews.forEach(function(review) { %>
-    <p><%= review.username %></p>
-  <% }) %>
-</div>
+
 
 <% include partials/footer %>
