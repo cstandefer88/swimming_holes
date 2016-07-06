@@ -21,7 +21,7 @@ router.post('/', function(req, res, next) {
   user.save(function(err, user) {
     // Handle save error
     if (err) return next(err);
-    res.redirect('/users/user');
+    res.redirect('/');
   });
 });
 
