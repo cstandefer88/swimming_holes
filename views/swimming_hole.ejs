@@ -1,9 +1,9 @@
 <% include partials/header %>
 
 <h1 class="holeName"><%= swimmingHole.name %></h1>
-  <section>
+  <section class="infoSection">
     <div class="specificInformation">
-      <ul>
+      <ul class="information">
         <li>Location: <%= swimmingHole.location %></li>
         <li>Hours: <%= swimmingHole.hours %></li>
         <li>Pet Friendly: <%= swimmingHole.petFriendly %></li>
@@ -19,20 +19,25 @@
     <div class="summary">
       <p><%= swimmingHole.summary %></p>
     </div>
+    <div class="reviews">
+      <h2> Reviews </h2>
+    </div>
+    <div class="reviewArrow">
+      <i class="fa fa-chevron-down fa-3x" aria-hidden="true"></i>
+    </div>
   </section>
 
     <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
       <div>
-        <h1>
         <label>Create a new review:</label>
-        <input type="text" name="review"/>
+        <input type="text" name="review" id="textArea"/>
       </div>
-      <div>
+      <div class="button">
         <input type="submit" value="Add Review!"/>
       </div>
     </form>
 
-    <div>
+    <div class="userReviews">
     <% reviews.forEach(function(review) { %>
       <p><%= review.review %></p>
      <% }) %>
