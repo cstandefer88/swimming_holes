@@ -1,35 +1,23 @@
 <% include partials/header %>
 
 <h1><%= swimming_hole.name %></h1>
-<div>
-  <ul>
-    <li><%= swimming_hole.location %></li>
-    <li><%= swimming_hole.hours %></li>
-    <li><%= swimming_hole.petFriendly %></li>
-    <li><%= swimming_hole.foodBeverage %></li>
-    <li><%= swimming_hole.price %></li>
-  </ul>
-</div>
-<div>
-  <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
-</div>
+<section>
+  <div>
+    <ul>
+      <li><%= swimming_hole.location %></li>
+      <li><%= swimming_hole.hours %></li>
+      <li><%= swimming_hole.petFriendly %></li>
+      <li><%= swimming_hole.foodBeverage %></li>
+      <li><%= swimming_hole.price %></li>
+    </ul>
+  </div>
+  <div>
+    <img src="<%= swimming_hole.imageUrl %>" alt="Picture of <%= swimming_hole.name %>">
+  </div>
+</section>
 <div>
   <p><%= swimming_hole.summary %></p>
 </div>
-
-
-<form action="/swimming_holes/<%= swimming_holes._id %>" method="post">
-  <div>
-    <label>Create a new review:</label>
-  </div>
-  <div>
-    <textarea name="review" placeholder="Write a review"></textarea>
-  </div>
-  <div>
-    <input type="submit" value="Add Review!"/>
-  </div>
-</form>
-
 
 <form action="/swimming_holes/<%= swimming_hole._id %>/reviews" method="post">
   <div>
