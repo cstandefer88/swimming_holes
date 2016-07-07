@@ -56,10 +56,12 @@ router.patch('/:id', function(req, res, next) {
 
 
 // // DELETE A REVIEW AND SAVE TO DATABASE
-router.delete('/:id', function(req, res, next) {
+router.delete('/:id/reviews/:id', function(req, res, next) {
   // identify specific review in database in reviews collection
+  var reviewId = req.body;
+  console.log(reviewId);
   // remove specific review in database in reviews collection (remove review id from swimming hole collection)
-  specificReview.findByIdAndRemove(req.params.id, req.body, function(err, review){
+  Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
     res.redirect('/swimming_holes/' + req.params.id);
   })
