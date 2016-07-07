@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var SwimmingHole = require('../models/swimming_hole');
+var mongoose = require('mongoose');
 var Review = require('../models/review');
 var User = require('../models/user');
-var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 
 
@@ -17,7 +17,9 @@ router.get('/:id', function(req, res, next) {
     });
     Review.find({
       '_id': { $in: reviewIds }
-    }, function(err, reviews) {
+    })
+    .populate('user')
+    .exec( function(err, reviews) {
       if (err) console.log(err);
       res.render('swimming_hole', { swimmingHole: swimmingHole, reviews: reviews });
     });
