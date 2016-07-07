@@ -129,14 +129,18 @@ footer {
 
 .specificInformation {
   float: left;
+  margin-left: 15%;
+  margin-top: auto;
 }
 
 .specificImage {
   float: right;
+  margin-right: 15%
 }
 
 .summary {
   display: inline-block;
+  margin: 0 15%;
 }
 
 .left {
