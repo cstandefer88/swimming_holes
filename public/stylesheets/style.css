@@ -220,8 +220,8 @@ footer {
 .formTitle {
   text-align: center;
   font-family: 'Arimo', sans-serif;
-  font-weight: bold;
-  padding-top: 50px;
+  padding-top: 30px;
+  font-size: 22px;
 }
 
 .accessAccount {
@@ -257,7 +257,7 @@ footer {
 }
 
 #signUpLogIn h1 {
-  font-size: 72px;
+  font-size: 52px;
 }
 
 #holeTitle h1 {
