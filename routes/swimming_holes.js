@@ -55,14 +55,10 @@ router.patch('/:id', function(req, res, next) {
 
 
 // // DELETE A REVIEW AND SAVE TO DATABASE
-<<<<<<< HEAD
-router.delete(':id/reviews/:review_id', function(req, res, next) {
-  console.log(req.params.review_id);
-  Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
-=======
+
 router.delete('/:swimming_hole_id/reviews/:review_id', function(req, res, next) {
   Review.findByIdAndRemove(req.params.review_id, req.body, function(err, review){
->>>>>>> master
+
     if (err) console.log(err);
 
     // console.log("review deleted",req.params.review_id);

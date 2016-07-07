@@ -58,6 +58,8 @@ img {
 footer {
   position: fixed;
   bottom: 0;
+  background: linear-gradient(to right, rgba(0, 51, 102, 1), rgba(0, 51, 102, 0.2));
+  color: white;
 }
 
 .nav {
@@ -161,6 +163,9 @@ footer {
 
 .information li {
   margin-bottom: 2%;
+}
+.information li a{
+  padding: 0;
 }
 
 .specificImage {
