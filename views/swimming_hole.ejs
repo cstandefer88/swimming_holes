@@ -34,7 +34,7 @@
     <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
       <div>
         <label id="holeLabel">Create a new review:</label>
-        <input id="holeInput" type="text" name="review"/>
+        <input id="holeInput" type="text" name="review" id="textArea"/>
       </div>
       <div class="holeButton">
         <input type="submit" value="Add Review!"/>
@@ -44,10 +44,11 @@
 
     <div class="userReviews">
       <% reviews.forEach(function(review) { %>
-        <% if (user._id.equals(review.user)) { %>
+        <% if (user) { %>
         <p><%= user.username %></p>
-        <p><%= review.review %>
+        <p><%= review.review %></p>
         <% } %>
+        <!-- <p><%= review.review %></p> -->
           <form action="/swimming_holes/<%= swimmingHole._id %>/reviews/<%=review._id%>" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Delete this review!">
@@ -56,5 +57,6 @@
         </p>
       <% }) %>
     </div>
+  </form>
 
 <% include partials/footer %>
