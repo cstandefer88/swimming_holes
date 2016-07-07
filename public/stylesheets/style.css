@@ -12,7 +12,7 @@ a {
   color: #00B7FF;
 }
 
-h1 {
+.hero h1 {
   text-align: center;
   vertical-align: middle;
   /*font-weight: bolder;*/
@@ -43,6 +43,16 @@ img {
   width: 70%;
   max-width: 500px;
   border: 1px solid black;
+}
+
+#holeLabel {
+  font-family: 'Raleway', sans-serif;
+  font-size: 30px;
+  margin-top: 10%;
+}
+
+#holeInput[type=text]{
+  width: 60%;
 }
 
 footer {
@@ -98,9 +108,21 @@ footer {
   cursor: pointer;
 }
 
+.reviewArrow {
+  text-align: center;
+}
+
+.reviewArrow:hover {
+  cursor: pointer;
+}
+
 .holeName {
   font-size: 40px;
   line-height: normal;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  border-bottom: 2px solid #2E4062;
+  margin-bottom: 50px;
 }
 
 .locations {
@@ -130,21 +152,57 @@ footer {
 .specificInformation {
   float: left;
   margin-left: 15%;
-  margin-top: auto;
+  max-width: 40%;
+}
+
+.information {
+  font-size: 18px;
+}
+
+.information li {
+  margin-bottom: 2%;
 }
 
 .specificImage {
-  float: right;
-  margin-right: 15%
+  /*float: right;*/
+  margin-bottom: 30px;
+  position: absolute;
+  right: 1%;
+  height: 100px;
+  width:40%;
+}
+
+.holeButton {
+  text-align: center;
+  margin: 3% 0;
 }
 
 .summary {
   display: inline-block;
-  margin: 0 15%;
+  margin: 8% 15%;
+  font-size: 18px;
+}
+
+.userReviews {
+  border: 7px solid #2E4062;
+  display: block;
+  text-align: center;
+  background-color: #fff;
+}
+
+.userReviews p {
+  margin: 1%;
+  text-align: left;
 }
 
 .left {
   float: left;
+}
+
+.reviews {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  margin-bottom: 3%;
 }
 
 .swimmingHole{
@@ -155,11 +213,15 @@ footer {
   padding: 15px;
 }
 
+.swimmingHole img {
+  width: 60%;
+}
+
 .formTitle {
   text-align: center;
   font-family: 'Arimo', sans-serif;
-  font-weight: bold;
-  padding-top: 50px;
+  padding-top: 30px;
+  font-size: 22px;
 }
 
 .accessAccount {
@@ -192,6 +254,14 @@ footer {
   width: 3%;
   margin: 6px 6px;
   border: none;
+}
+
+#signUpLogIn h1 {
+  font-size: 52px;
+}
+
+#holeTitle h1 {
+  text-align: center;
 }
 
 @media (max-width: 760px){

@@ -1,36 +1,42 @@
 <% include ../partials/header %>
-<h2 class="formTitle">Sign Up</h2>
-<form class="accessAccount" action="/users/" method="post">
-  <div>
-    <label>Username:</label>
-    <input type="text" name="username"/>
+  <div id="signUpLogIn">
+    <div class="title">
+      <h1 class="cursive"> SwimSpot </h1>
+      <h1 class="notcursive"> Austin </h1>
+    </div>
   </div>
-  <div>
-    <label class="email">Email:</label>
-    <input type="text" name="email"/>
-  </div>
-  <div>
-    <label class="password">Password:</label>
-    <input type="password" name="password"/>
-  </div>
-  <div>
-    <input type="submit" value="Sign Up"/>
-  </div>
-</form>
+  <h2 class="formTitle">Sign Up</h2>
+  <form class="accessAccount" action="/users/" method="post">
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username"/>
+    </div>
+    <div>
+      <label class="email">Email:</label>
+      <input type="text" name="email"/>
+    </div>
+    <div>
+      <label class="password">Password:</label>
+      <input type="password" name="password"/>
+    </div>
+    <div>
+      <input type="submit" value="Sign Up"/>
+    </div>
+  </form>
 
-<h2 class="formTitle">Log In</h2>
-<form class="accessAccount" action="/sessions/" method="post">
-  <div>
-    <label>Username:</label>
-    <input type="text" name="username"/>
-  </div>
-  <div>
-    <label class="password">Password:</label>
-    <input type="password" name="password"/>
-  </div>
-  <div>
-    <input type="submit" value="Log In"/>
-  </div>
-</form>
+  <h2 class="formTitle">Log In</h2>
+  <form class="accessAccount" action="/sessions/" method="post">
+    <div>
+      <label>Username:</label>
+      <input type="text" name="username"/>
+    </div>
+    <div>
+      <label class="password">Password:</label>
+      <input type="password" name="password"/>
+    </div>
+    <div>
+      <input type="submit" value="Log In"/>
+    </div>
+  </form>
 
 <% include ../partials/footer %>
