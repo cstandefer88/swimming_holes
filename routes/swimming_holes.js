@@ -18,7 +18,6 @@ router.get('/:id', function(req, res, next) {
       '_id': { $in: reviewIds }
     }, function(err, reviews) {
       if (err) console.log(err);
-      console.log(reviews);
     res.render('swimming_hole', { swimmingHole: swimmingHole, reviews: reviews });
   });
 });
@@ -36,7 +35,6 @@ router.post('/:id/reviews', function(req, res, next) {
     var id = req.params.id
     SwimmingHole.findById( id, function(err, swimmingHole) {
       if (err) console.log(err);
-      console.log(swimmingHole)
       swimmingHole.reviews.push(review);
       swimmingHole.save(function(err, swimmingHole) {
         res.redirect('/swimming_holes/' + req.params.id);
@@ -47,7 +45,9 @@ router.post('/:id/reviews', function(req, res, next) {
 
 // // UPDATE A REVIEW AND SAVE TO DATABASE
 router.patch('/:id', function(req, res, next) {
-  Review.findByIdAndUpdate(req.params.id, req.body, function(err, review){
+  // identify specific review in database in reviews collection
+  // update specific review in database in reviews collection
+  specificReview.findByIdAndUpdate(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
     res.redirect('/swimming_holes/' + req.params.id);
   })
@@ -55,10 +55,21 @@ router.patch('/:id', function(req, res, next) {
 
 
 // // DELETE A REVIEW AND SAVE TO DATABASE
-router.delete('/:id', function(req, res, next) {
-  Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
+router.delete('/:swimming_hole_id/reviews/:review_id', function(req, res, next) {
+  Review.findByIdAndRemove(req.params.review_id, req.body, function(err, review){
     if (err) console.log(err);
-    res.redirect('/swimming_holes/' + req.params.id);
+
+    // console.log("review deleted",req.params.review_id);
+    // SwimmingHole.update(
+    //   { _id: req.params.swimming_hole_id },
+    //   { $pull: { reviews : { _id : mongoose.Types.ObjectId(req.params.review_id) } } },
+    //   {},
+    //   function (err, swimmingHole) {
+    //     if (err) console.log(err);
+    //     console.log("swimming hole updated",swimmingHole);
+        res.redirect('/swimming_holes/' + req.params.swimming_hole_id);
+    //   }
+    // );
   })
 });
 
