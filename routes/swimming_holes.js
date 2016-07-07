@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var SwimmingHole = require('../models/swimming_hole');
 var Review = require('../models/review');
+var User = require('../models/user');
 var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 
@@ -18,9 +19,9 @@ router.get('/:id', function(req, res, next) {
       '_id': { $in: reviewIds }
     }, function(err, reviews) {
       if (err) console.log(err);
-    res.render('swimming_hole', { swimmingHole: swimmingHole, reviews: reviews });
+      res.render('swimming_hole', { swimmingHole: swimmingHole, reviews: reviews });
+    });
   });
-});
 });
 
 
@@ -43,7 +44,8 @@ router.get('/:swimming_hole_id/reviews/:review_id/edit', function(req, res, next
 // CREATE A NEW REVIEW AND SAVE TO DATABASES
 router.post('/:id/reviews', function(req, res, next) {
   var review = new Review({
-    review: req.body.review
+    review: req.body.review,
+    user: req.user._id
   });
   review.save(function(err, review) {
     if (err) console.log(err);
