@@ -45,13 +45,13 @@ img {
   border: 1px solid black;
 }
 
-label {
+#holeLabel {
   font-family: 'Raleway', sans-serif;
   font-size: 30px;
   margin-top: 10%;
 }
 
-input[type=text]{
+#holeInput[type=text]{
   width: 60%;
 }
 
@@ -172,7 +172,7 @@ footer {
   width:40%;
 }
 
-.button {
+.holeButton {
   text-align: center;
   margin: 3% 0;
 }

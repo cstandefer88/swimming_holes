@@ -29,10 +29,10 @@
 
     <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
       <div>
-        <label>Create a new review:</label>
-        <input type="text" name="review" id="textArea"/>
+        <label id="holeLabel">Create a new review:</label>
+        <input id="holeInput" type="text" name="review" id="textArea"/>
       </div>
-      <div class="button">
+      <div class="holeButton">
         <input type="submit" value="Add Review!"/>
       </div>
     </form>
