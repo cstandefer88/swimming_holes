@@ -60,7 +60,7 @@ router.post('/:id/reviews', function(req, res, next) {
 
 // // UPDATE A REVIEW AND SAVE TO DATABASE
 router.patch('/:swimming_hole_id/reviews/:review_id/edit', function(req, res, next) {
-  Review.findByIdAndUpdate(req.params.id, req.body, function(err, review){
+  Review.findByIdAndUpdate(req.params.review_id, req.body, function(err, review){
     if (err) console.log(err);
     res.redirect('/swimming_holes/' + req.params.swimming_hole_id);
   })
