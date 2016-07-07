@@ -12,6 +12,8 @@ This app allows users to view swimming holes in Austin and the surrounding areas
 ## Technologies Used
 Node.js, Express.js, Mongoose, mLab
 
+## Approach Taken
+
 
 ##User Stories
 * User lands on gallery homepage
