@@ -61,6 +61,8 @@ footer {
   background: linear-gradient(#2E4062, #121422);
   color: white;
   width: 100%;
+  font-size: 12px;
+  padding-left: 0.5%;
 }
 
 .nav {
