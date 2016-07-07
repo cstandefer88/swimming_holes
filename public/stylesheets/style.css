@@ -58,8 +58,9 @@ img {
 footer {
   position: fixed;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0, 51, 102, 1), rgba(0, 51, 102, 0.2));
+  background: linear-gradient(#2E4062, #121422);
   color: white;
+  margin: auto;
 }
 
 .nav {
