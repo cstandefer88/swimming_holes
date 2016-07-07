@@ -11,11 +11,11 @@ var swimmingHoleSchema = new mongoose.Schema({
   price: { type: String, required: true },
   summary: { type: String, required: true },
   imageUrl: { type: String, required: true },
+  website: { type: String},
   reviews: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Review'
-  }],
-  website: { type: String}
+  }]
 });
 
 var SwimmingHole = mongoose.model('swimming_holes', swimmingHoleSchema);
