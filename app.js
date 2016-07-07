@@ -14,6 +14,8 @@ var connect = require('connect')
 
 mongoose.connect(process.env.DB_SWIMMING_HOLES);
 
+var User = require('./models/user');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var sessions = require('./routes/sessions');
@@ -54,8 +56,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-var User = require('./models/user');
 
 passport.use(new LocalStrategy(
   function(username, password, done) {

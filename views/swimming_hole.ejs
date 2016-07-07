@@ -30,7 +30,7 @@
     </div>
   </section>
 
-
+    <% if (user) { %>
     <form action="/swimming_holes/<%= swimmingHole._id %>/reviews" method="post">
       <div>
         <label id="holeLabel">Create a new review:</label>
@@ -40,20 +40,22 @@
         <input type="submit" value="Add Review!"/>
       </div>
     </form>
-
+    <% } %>
 
     <div class="userReviews">
       <% reviews.forEach(function(review) { %>
+
+        <p><%= review.user.username %></p>
+        <p><%= review.review %>
         <% if (user) { %>
-        <p><%= user.username %></p>
-        <p><%= review.review %></p>
+          <% if (user._id.equals(review.user._id)) { %>
+            <form action="/swimming_holes/<%= swimmingHole._id %>/reviews/<%=review._id%>" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="Delete this review!">
+            </form>
+            <a href="/swimming_holes/<%= swimmingHole._id %>/reviews/<%= review._id %>/edit">Edit this review!</a>
+          <% } %>
         <% } %>
-        <!-- <p><%= review.review %></p> -->
-          <form action="/swimming_holes/<%= swimmingHole._id %>/reviews/<%=review._id%>" method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Delete this review!">
-          </form>
-          <a href="/swimming_holes/<%= swimmingHole._id %>/reviews/<%= review._id %>/edit">Edit this review!</a>
         </p>
       <% }) %>
     </div>
