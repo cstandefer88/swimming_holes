@@ -25,7 +25,9 @@
       <ul class="navBar">
         <li class="right"><a href="/users/new">Log In/Sign Up</a></li>
         <li class="right"><a href="/">Home</a></li>
+        <% if (user) { %>
         <li class="right">Welcome, <%= user.username %></li>
+        <% } %>
       </ul>
     </div>
     <div class="">
