@@ -98,7 +98,16 @@ footer {
 .right {
   float: right;
   font-weight: bold;
-  color: white;
+  color: #fff;
+}
+
+.username {
+  float: left;
+  color: #fff;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 40px;
 }
 
 .arrow {
