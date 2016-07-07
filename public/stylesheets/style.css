@@ -267,6 +267,19 @@ footer {
   padding-bottom: 10px;
 }
 
+.siteLink {
+  text-decoration: none;
+  color: #2E4062;
+  font-family: 'Lucida Grande', sans-serif;
+  font-size: 18px;
+  /*float: left;*/
+  margin-top: -4.5%;
+  margin-left: 18%;
+  text-align: left;
+  max-width: 40%;
+
+}
+
 #logo img{
   float: left;
   width: 3%;
