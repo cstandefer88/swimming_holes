@@ -33,7 +33,7 @@ router.post('/:id/reviews', function(req, res, next) {
   });
   review.save(function(err, review) {
     if (err) console.log(err);
-    var id = req.params.id
+    var id = req.params.id;
     SwimmingHole.findById( id, function(err, swimmingHole) {
       if (err) console.log(err);
       console.log(swimmingHole)
@@ -55,7 +55,8 @@ router.patch('/:id', function(req, res, next) {
 
 
 // // DELETE A REVIEW AND SAVE TO DATABASE
-router.delete('/:id', function(req, res, next) {
+router.delete(':id/reviews/:review_id', function(req, res, next) {
+  console.log(req.params.review_id);
   Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
     res.redirect('/swimming_holes/' + req.params.id);
