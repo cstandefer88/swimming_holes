@@ -213,6 +213,10 @@ footer {
   padding: 15px;
 }
 
+.swimmingHole img {
+  width: 60%;
+}
+
 .formTitle {
   text-align: center;
   font-family: 'Arimo', sans-serif;
