@@ -45,7 +45,7 @@
     <div class="userReviews">
       <% reviews.forEach(function(review) { %>
 
-        <p><%= review.user.username %></p>
+        <p><%= review.user.username %>:</p>
         <p><%= review.review %>
         <% if (user) { %>
           <% if (user._id.equals(review.user._id)) { %>
