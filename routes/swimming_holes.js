@@ -44,12 +44,10 @@ router.post('/:id/reviews', function(req, res, next) {
 });
 
 // // UPDATE A REVIEW AND SAVE TO DATABASE
-router.patch('/:id', function(req, res, next) {
-  // identify specific review in database in reviews collection
-  // update specific review in database in reviews collection
-  specificReview.findByIdAndUpdate(req.params.id, req.body, function(err, review){
+router.patch('/:swimming_hole_id/reviews/:review_id', function(req, res, next) {
+  Review.findByIdAndUpdate(req.params.id, req.body, function(err, review){
     if (err) console.log(err);
-    res.redirect('/swimming_holes/' + req.params.id);
+    res.redirect('/swimming_holes/' + req.params.swimming_hole_id);
   })
 });
 
