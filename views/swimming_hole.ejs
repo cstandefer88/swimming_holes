@@ -42,7 +42,7 @@
     <div class="userReviews">
       <% reviews.forEach(function(review) { %>
         <p><%= review.review %>
-          <form action="/swimming_holes/<%= swimmingHole._id %>" method="post">
+          <form action="/swimming_holes/<%= swimmingHole._id %>/reviews/<%=review._id%>" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Delete this review!">
           </form>

@@ -56,14 +56,21 @@ router.patch('/:id', function(req, res, next) {
 
 
 // // DELETE A REVIEW AND SAVE TO DATABASE
-router.delete('/:id/reviews/:id', function(req, res, next) {
-  // identify specific review in database in reviews collection
-  var reviewId = req.body;
-  console.log(reviewId);
-  // remove specific review in database in reviews collection (remove review id from swimming hole collection)
-  Review.findByIdAndRemove(req.params.id, req.body, function(err, review){
+router.delete('/:swimming_hole_id/reviews/:review_id', function(req, res, next) {
+  Review.findByIdAndRemove(req.params.review_id, req.body, function(err, review){
     if (err) console.log(err);
-    res.redirect('/swimming_holes/' + req.params.id);
+
+    // console.log("review deleted",req.params.review_id);
+    // SwimmingHole.update(
+    //   { _id: req.params.swimming_hole_id },
+    //   { $pull: { reviews : { _id : mongoose.Types.ObjectId(req.params.review_id) } } },
+    //   {},
+    //   function (err, swimmingHole) {
+    //     if (err) console.log(err);
+    //     console.log("swimming hole updated",swimmingHole);
+        res.redirect('/swimming_holes/' + req.params.swimming_hole_id);
+    //   }
+    // );
   })
 });
 
