@@ -1,0 +1,10 @@
+<% include partials/header %>
+
+
+<form action="/swimming_holes/<%= swimmingHole._id %>/reviews/<%= review._id %>/edit" method="post">
+  <input type="hidden" name="_method" value="patch">
+  Review: <input type="text" name="review" value="<%= review.review %>">
+  <input type="submit" value="Update this review!">
+</form>
+
+<% include partials/footer %>
