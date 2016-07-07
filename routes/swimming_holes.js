@@ -37,8 +37,8 @@ router.get('/:swimming_hole_id/reviews/:review_id/edit', function(req, res, next
     Review.findOne({_id: reviewId }, function(err, review){
       if (err) console.log(err);
       res.render('edit', { swimmingHole: swimmingHole, review: review })
+    });
   });
-});
 });
 
 
@@ -67,7 +67,7 @@ router.patch('/:swimming_hole_id/reviews/:review_id/edit', function(req, res, ne
   Review.findByIdAndUpdate(req.params.review_id, req.body, function(err, review){
     if (err) console.log(err);
     res.redirect('/swimming_holes/' + req.params.swimming_hole_id);
-  })
+  });
 });
 
 
@@ -89,7 +89,7 @@ router.delete('/:swimming_hole_id/reviews/:review_id', function(req, res, next) 
         res.redirect('/swimming_holes/' + req.params.swimming_hole_id);
     //   }
     // );
-  })
+  });
 });
 
 
