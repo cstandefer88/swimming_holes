@@ -6,7 +6,7 @@ $(document).ready(function(){
   });
   $('.reviewArrow').click(function () {
     $('html,body').animate({
-        scrollTop: $(document).height()/2,
+        scrollTop: $(document).height()/1.5,
     }, 1000);
   });
 });
