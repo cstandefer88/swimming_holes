@@ -58,6 +58,8 @@ img {
 footer {
   position: fixed;
   bottom: 0;
+  background: linear-gradient(to right, rgba(0, 51, 102, 1), rgba(0, 51, 102, 0.2));
+  color: white;
 }
 
 .nav {
@@ -98,7 +100,16 @@ footer {
 .right {
   float: right;
   font-weight: bold;
-  color: white;
+  color: #fff;
+}
+
+.username {
+  float: left;
+  color: #fff;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 40px;
 }
 
 .arrow {
@@ -158,10 +169,15 @@ footer {
 
 .information {
   font-size: 18px;
+  list-style-type: none;
 }
 
 .information li {
   margin-bottom: 2%;
+}
+
+.information li a{
+  padding: 0;
 }
 
 .specificImage {

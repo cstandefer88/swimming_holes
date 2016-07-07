@@ -14,7 +14,8 @@ var swimmingHoleSchema = new mongoose.Schema({
   reviews: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Review'
-  }]
+  }],
+  website: { type: String}
 });
 
 var SwimmingHole = mongoose.model('swimming_holes', swimmingHoleSchema);
