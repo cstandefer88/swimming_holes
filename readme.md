@@ -1,5 +1,3 @@
-A readme.md file with unsolved problems, etc.
-
 # SwimSpot Austin
 
 ## The App
