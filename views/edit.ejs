@@ -2,11 +2,11 @@
 <div class="updateReview">
   <h2>Update your review of <%= swimmingHole.name %></h2>
 </div>
-<section class="updateForm"
+<section class="updateForm">
   <form action="/swimming_holes/<%= swimmingHole._id %>/reviews/<%= review._id %>/edit" method="post">
     <input type="hidden" name="_method" value="patch">
       <h3>Your Review: <textarea class="update" name="review"><%= review.review %></textarea></h3>
-    <div class="holeButton">
+  <div class="holeButton">
     <input type="submit" value="Update this review!">
   </div>
   </form>
