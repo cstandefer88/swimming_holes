@@ -45,16 +45,6 @@ img {
   border: 1px solid black;
 }
 
-#holeLabel {
-  font-family: 'Raleway', sans-serif;
-  font-size: 30px;
-  margin-top: 10%;
-}
-
-#holeInput[type=text]{
-  width: 60%;
-}
-
 footer {
   position: fixed;
   bottom: 0;
@@ -206,6 +196,40 @@ textarea {
   font-size: 18px;
 }
 
+.deleteReview {
+  margin-bottom: 0.5%;
+}
+
+.deleteReview input[type=submit]{
+  background: #EAF0F0;
+  color: #2E4062;
+}
+
+.deleteReview input[type=submit]:hover{
+  background: #2E4062;
+  color: #fff;
+}
+
+.holeButton input[type=submit]{
+  background: #EAF0F0;
+  color: #2E4062;
+}
+
+.holeButton input[type=submit]:hover{
+  background: #2E4062;
+  color: #fff;
+}
+
+.homepage input[type=submit]{
+  background: #EAF0F0;
+  color: #2E4062;
+}
+
+.homepage input[type=submit]:hover{
+  background: #2E4062;
+  color: #fff;
+}
+
 .userReviews {
   border: 7px solid #2E4062;
   display: block;
@@ -314,6 +338,23 @@ textarea {
 
 #holeTitle h1 {
   text-align: center;
+}
+
+#personalUsername {
+  font-weight: bolder;
+  background-color: #EAF0F0;
+}
+
+#holeLabel {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  margin-top: 10%;
+  text-align: center;
+  margin-left: 7%;
+}
+
+#holeInput[type=text]{
+  width: 60%;
 }
 
 @media (max-width: 760px){
